@@ -1,0 +1,11 @@
+cluster.name: "docker-cluster"
+network.host: 0.0.0.0
+
+# minimum_master_nodes need to be explicitly set when bound on a public IP
+# set to 1 to allow single node clusters
+# Details: https://github.com/elastic/elasticsearch/pull/17288
+discovery.zen.minimum_master_nodes: 1
+# Allow localhost cross-origin requests.
+# taken from offical documents
+http.cors.enabled: true
+http.cors.allow-origin: /(null)|(https?:\/\/localhost(:[0-9]+)?)|(https?:\/\/cdn\.rawgit\.com(:[0-9]+)?)/
